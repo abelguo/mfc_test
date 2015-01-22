@@ -1,17 +1,24 @@
-#include <iostream>
-#include "mfc.h"
-
-using namespace std;
+#include<stdio.h>
+#include"mfc.h"
+#ifndef MY_H
+#define MY_H
 
 class CMyWinApp :public CWinApp
 {
 public:
-	CMyWinApp::CMyWinApp(){cout<<"CMyWinApp constructor\n";}
-	CMyWinApp::~CMyWinApp(){cout<<"CMyWinApp destructor\n";}
+	//CWnd* m_pMainWnd;
+	CMyWinApp::CMyWinApp(){printf("CMyWinApp constructor\n");}
+	CMyWinApp::~CMyWinApp(){printf("CMyWinApp destructor\n");}
+	virtual BOOL InitInstance();
 };
+
+
 class CMyFrameWnd :public CFrameWnd
 {
 public:
-	CMyFrameWnd::CMyFrameWnd(){cout<<"CMyFrameWnd constructor\n";}
-	CMyFrameWnd::~CMyFrameWnd(){cout<<"CMyFrameWnd destructor\n";}
+	CMyFrameWnd();
+	CMyFrameWnd::~CMyFrameWnd(){printf("CMyFrameWnd destructor\n");}
+
 };
+
+#endif
